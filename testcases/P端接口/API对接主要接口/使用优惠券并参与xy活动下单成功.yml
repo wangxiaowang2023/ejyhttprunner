@@ -16,7 +16,7 @@
       - payAmount
 
 - test:
-    name: 使用优惠券并参与油站和平台活动订单计算
+    name: 使用优惠券并参与xy活动订单计算
     api: api/P端接口/API对接主要接口/订单计算接口.yml
     variables:
       version: 6.5.6
@@ -52,7 +52,7 @@
 #      - str_eq: [ json.data.payAmount, "198.61" ]
 
 - test:
-    name: 创建使用优惠券并参与油站和平台活动油站订单
+    name: 创建使用优惠券并参与xy活动油站订单
     api: api/P端接口/API对接主要接口/创建订单接口.yml
     variables:
       version: 6.5.6
@@ -96,7 +96,7 @@
 #      - eq: [ json.data.discountPrice, "7.15" ]
 
 - test:
-    name: 用户支付使用优惠券并参与油站和平台活动订单
+    name: 用户支付使用优惠券并参与xy活动订单
     api: api/P端接口/API对接主要接口/订单支付接口.yml
     variables:
       version: 6.5.6
