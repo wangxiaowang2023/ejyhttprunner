@@ -1,5 +1,4 @@
 yjyhrp/.env
-reports/*
 __pycache__/*
 *.pyc
 .python-version
