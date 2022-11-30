@@ -1,0 +1,4302 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小前端P端api测试集报告 - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1 style=" text-align:center;">小前端P端api测试集报告</h1>
+
+  <h2>概况:</h2>
+  <table id="summary">
+    <tr>
+      <th>开始时间</th>
+      <td colspan="4">2022-11-30T10:24:05.392697</td>
+    </tr>
+    <tr>
+      <th>运行总时长</th>
+      <td colspan="4">9.798 seconds</td>
+    </tr>
+    <tr>
+      <th>运行平台</th>
+      <td>HttpRunner 2.5.7 </td>
+      <td>CPython 3.9.13 </td>
+      <td colspan="2">Windows-10-10.0.19044-SP0</td>
+    </tr>
+    <tr>
+      <th>统计</th>
+      <th colspan="2">测试用例 (success/fail)</th>
+      <th colspan="2">测试步骤 (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">3 (3/0)</td>
+      <td colspan="2">13 (13/0/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>详情:</h2>
+
+  
+  
+  <h3>用例:待支付订单再次下单，需要取消优惠券和订单</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>总数: 3</td>
+      <td>成功: 3</td>
+      <td>失败: 0</td>
+      <td>错误: 0</td>
+      <td>跳过: 0</td>
+    </tr>
+    <tr>
+      <th>状态</th>
+      <th colspan="2">步骤</th>
+      <th>响应时长</th>
+      <th>详情</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">创建油站订单-待支付</td>
+      <td style="text-align:center;width:6em;">636.77 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 创建油站订单-待支付</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;244&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;hadInvoice&#34;: true,
+  &#34;identityCode&#34;: null,
+  &#34;invoiceHead&#34;: null,
+  &#34;invoiceNumber&#34;: null,
+  &#34;oilgunCode&#34;: 1,
+  &#34;outOrderSign&#34;: null,
+  &#34;phoneNumber&#34;: &#34;18679256505&#34;,
+  &#34;plateNumber&#34;: null,
+  &#34;stationId&#34;: &#34;38303&#34;,
+  &#34;totalAmount&#34;: 200,
+  &#34;userCouponId&#34;: &#34;110502&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:07 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;orderSign&#34;: &#34;1012211301824070007&#34;,
+    &#34;oilMass&#34;: &#34;27.7778&#34;,
+    &#34;payAmount&#34;: &#34;198.61&#34;,
+    &#34;discountPrice&#34;: &#34;7.15&#34;,
+    &#34;couponAmount&#34;: &#34;0&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>196</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>636.77</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>635.839</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">再次创建油站订单，原订单和优惠券需要释放</td>
+      <td style="text-align:center;width:6em;">722.51 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 再次创建油站订单，原订单和优惠券需要释放</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;244&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;hadInvoice&#34;: true,
+  &#34;identityCode&#34;: null,
+  &#34;invoiceHead&#34;: null,
+  &#34;invoiceNumber&#34;: null,
+  &#34;oilgunCode&#34;: 1,
+  &#34;outOrderSign&#34;: null,
+  &#34;phoneNumber&#34;: &#34;18679256505&#34;,
+  &#34;plateNumber&#34;: null,
+  &#34;stationId&#34;: &#34;38303&#34;,
+  &#34;totalAmount&#34;: 200,
+  &#34;userCouponId&#34;: &#34;110502&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:09 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;orderSign&#34;: &#34;1012211301824090008&#34;,
+    &#34;oilMass&#34;: &#34;27.7778&#34;,
+    &#34;payAmount&#34;: &#34;198.61&#34;,
+    &#34;discountPrice&#34;: &#34;7.15&#34;,
+    &#34;couponAmount&#34;: &#34;0&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>196</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>722.51</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>721.854</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_3">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">查询再次下单的前一笔订单被取消</td>
+      <td style="text-align:center;width:6em;">192.91 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_3_1">log-1</a>
+        <div id="popup_log_1_3_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_1_3_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 查询再次下单的前一笔订单被取消</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/statement/6.5.6/18679256505/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;34&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;page&#34;: 1,
+  &#34;stationIds&#34;: &#34;38303&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/statement/6.5.6/18679256505/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:11 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;consumeTimes&#34;: &#34;41&#34;,
+    &#34;allPaySum&#34;: &#34;6888.18&#34;,
+    &#34;saveMoney&#34;: &#34;152.82&#34;,
+    &#34;orderList&#34;: [
+      {
+        &#34;orderId&#34;: &#34;1012211301824090008&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:24:09&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 0,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301824070007&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:24:08&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301822470006&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:22:47&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301822430007&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:22:44&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301820370006&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:20:37&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301820340003&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:20:35&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301820210008&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:20:21&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301820190003&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:20:19&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301818580007&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:18:58&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301818560005&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试不参与任何活动~不可动勿动&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:18:57&#34;,
+        &#34;orderSum&#34;: &#34;198.61&#34;,
+        &#34;reduceSum&#34;: &#34;0&#34;,
+        &#34;orderState&#34;: 2,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      }
+    ],
+    &#34;orderQuantity&#34;: 87,
+    &#34;currentPageNum&#34;: 1,
+    &#34;allPageNum&#34;: 87,
+    &#34;personalInfo&#34;: {
+      &#34;joinEjiayouDay&#34;: &#34;8&#34;,
+      &#34;headUrl&#34;: null,
+      &#34;nickName&#34;: &#34;易加油566&#34;,
+      &#34;centerPicUrl&#34;: null,
+      &#34;globalPicUrl&#34;: null
+    }
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data.orderList.0.stationPhone
+                      </td>
+                      <td>string_equals</td>
+                      <td>0722-12306</td>
+                      <td>0722-12306</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data
+                      </td>
+                      <td>contains</td>
+                      <td>saveMoney</td>
+                      <td>{&#39;consumeTimes&#39;: &#39;41&#39;, &#39;allPaySum&#39;: &#39;6888.18&#39;, &#39;saveMoney&#39;: &#39;152.82&#39;, &#39;orderList&#39;: [{&#39;orderId&#39;: &#39;1012211301824090008&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:24:09&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 0, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301824070007&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:24:08&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301822470006&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:22:47&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301822430007&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:22:44&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301820370006&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:20:37&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301820340003&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:20:35&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301820210008&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:20:21&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301820190003&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:20:19&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301818580007&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:18:58&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301818560005&#39;, &#39;stationName&#39;: &#39;老王P端测试不参与任何活动~不可动勿动&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/eefbb9af-f345-4112-93f6-00c8a25224fa-1669085853357.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:18:57&#39;, &#39;orderSum&#39;: &#39;198.61&#39;, &#39;reduceSum&#39;: &#39;0&#39;, &#39;orderState&#39;: 2, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}], &#39;orderQuantity&#39;: 87, &#39;currentPageNum&#39;: 1, &#39;allPageNum&#39;: 87, &#39;personalInfo&#39;: {&#39;joinEjiayouDay&#39;: &#39;8&#39;, &#39;headUrl&#39;: None, &#39;nickName&#39;: &#39;易加油566&#39;, &#39;centerPicUrl&#39;: None, &#39;globalPicUrl&#39;: None}}</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data.orderList.1.orderId
+                      </td>
+                      <td>string_equals</td>
+                      <td>1012211301824070007</td>
+                      <td>1012211301824070007</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        LazyString($orderSignStatus)
+                      </td>
+                      <td>string_equals</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>3769</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>192.91</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>192.616</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+  
+  <h3>用例:使用优惠券并参与油站活动下单成功</h3>
+  <table id="suite_2" class="details">
+    <tr>
+      <td>总数: 5</td>
+      <td>成功: 5</td>
+      <td>失败: 0</td>
+      <td>错误: 0</td>
+      <td>跳过: 0</td>
+    </tr>
+    <tr>
+      <th>状态</th>
+      <th colspan="2">步骤</th>
+      <th>响应时长</th>
+      <th>详情</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_2_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">使用优惠券并参与油站和平台活动订单计算</td>
+      <td style="text-align:center;width:6em;">440.22 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_2_1_1">log-1</a>
+        <div id="popup_log_2_1_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_2_1_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 使用优惠券并参与油站和平台活动订单计算</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/compute/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;134&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;identityCode&#34;: 6,
+  &#34;oilgunCode&#34;: 1,
+  &#34;phoneNumber&#34;: &#34;18679256505&#34;,
+  &#34;stationId&#34;: &#34;38302&#34;,
+  &#34;totalAmount&#34;: 200,
+  &#34;userCouponId&#34;: &#34;110502&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/compute/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:11 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;oilMass&#34;: &#34;27.7778&#34;,
+    &#34;payAmount&#34;: &#34;195.83&#34;,
+    &#34;serviceFee&#34;: &#34;0&#34;,
+    &#34;discountAmount&#34;: &#34;4.17&#34;,
+    &#34;couponAmount&#34;: &#34;0&#34;,
+    &#34;discountPrice&#34;: &#34;7.05&#34;,
+    &#34;countryPrice&#34;: &#34;9.0000&#34;,
+    &#34;stationPrice&#34;: &#34;7.2000&#34;,
+    &#34;payUnitPrice&#34;: &#34;7.0499&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>275</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>440.22</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>439.867</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_2_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">创建使用优惠券并参与油站和平台活动油站订单</td>
+      <td style="text-align:center;width:6em;">863.06 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_2_2_1">log-1</a>
+        <div id="popup_log_2_2_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_2_2_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 创建使用优惠券并参与油站和平台活动油站订单</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;244&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;hadInvoice&#34;: true,
+  &#34;identityCode&#34;: null,
+  &#34;invoiceHead&#34;: null,
+  &#34;invoiceNumber&#34;: null,
+  &#34;oilgunCode&#34;: 1,
+  &#34;outOrderSign&#34;: null,
+  &#34;phoneNumber&#34;: &#34;18679256505&#34;,
+  &#34;plateNumber&#34;: null,
+  &#34;stationId&#34;: &#34;38302&#34;,
+  &#34;totalAmount&#34;: 200,
+  &#34;userCouponId&#34;: &#34;110502&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:12 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;orderSign&#34;: &#34;1012211301824120008&#34;,
+    &#34;oilMass&#34;: &#34;27.7778&#34;,
+    &#34;payAmount&#34;: &#34;193.05&#34;,
+    &#34;discountPrice&#34;: &#34;6.95&#34;,
+    &#34;couponAmount&#34;: &#34;0&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>196</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>863.06</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>862.255</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_2_3">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">用户支付使用优惠券并参与油站和平台活动订单</td>
+      <td style="text-align:center;width:6em;">338.44 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_2_3_1">log-1</a>
+        <div id="popup_log_2_3_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_2_3_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 用户支付使用优惠券并参与油站和平台活动订单</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/pay/6.5.6/1012211301824120008/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;83&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;orderSign&#34;: &#34;1012211301824120008&#34;,
+  &#34;outOrderSign&#34;: 1111,
+  &#34;totalAmount&#34;: &#34;193.05&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/pay/6.5.6/1012211301824120008/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:12 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: null,
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        text
+                      </td>
+                      <td>contains</td>
+                      <td>totalCount</td>
+                      <td>{&#39;code&#39;: 200, &#39;message&#39;: &#39;操作成功&#39;, &#39;data&#39;: None, &#39;totalCount&#39;: None, &#39;success&#39;: True}</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>82</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>338.44</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>337.946</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_2_4">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">查询历史订单</td>
+      <td style="text-align:center;width:6em;">245.54 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_2_4_1">log-1</a>
+        <div id="popup_log_2_4_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_2_4_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 查询历史订单</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/statement/6.5.6/18679256505/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;34&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;page&#34;: 1,
+  &#34;stationIds&#34;: &#34;38302&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/statement/6.5.6/18679256505/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:13 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;consumeTimes&#34;: &#34;42&#34;,
+    &#34;allPaySum&#34;: &#34;7081.23&#34;,
+    &#34;saveMoney&#34;: &#34;159.77&#34;,
+    &#34;orderList&#34;: [
+      {
+        &#34;orderId&#34;: &#34;1012211301824120008&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试（油站标签）专用~切记勿动数据&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:24:12&#34;,
+        &#34;orderSum&#34;: &#34;193.05&#34;,
+        &#34;reduceSum&#34;: &#34;11.12&#34;,
+        &#34;orderState&#34;: 1,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301822490001&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试（油站标签）专用~切记勿动数据&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:22:50&#34;,
+        &#34;orderSum&#34;: &#34;193.05&#34;,
+        &#34;reduceSum&#34;: &#34;11.12&#34;,
+        &#34;orderState&#34;: 1,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301821210005&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试（油站标签）专用~切记勿动数据&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:21:22&#34;,
+        &#34;orderSum&#34;: &#34;193.05&#34;,
+        &#34;reduceSum&#34;: &#34;11.12&#34;,
+        &#34;orderState&#34;: 1,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      },
+      {
+        &#34;orderId&#34;: &#34;1012211301644170002&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试（油站标签）专用~切记勿动数据&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 16:44:17&#34;,
+        &#34;orderSum&#34;: &#34;104.17&#34;,
+        &#34;reduceSum&#34;: &#34;100.00&#34;,
+        &#34;orderState&#34;: 1,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      }
+    ],
+    &#34;orderQuantity&#34;: 4,
+    &#34;currentPageNum&#34;: 1,
+    &#34;allPageNum&#34;: 4,
+    &#34;personalInfo&#34;: {
+      &#34;joinEjiayouDay&#34;: &#34;8&#34;,
+      &#34;headUrl&#34;: null,
+      &#34;nickName&#34;: &#34;易加油566&#34;,
+      &#34;centerPicUrl&#34;: null,
+      &#34;globalPicUrl&#34;: null
+    }
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data.orderList.0.stationPhone
+                      </td>
+                      <td>string_equals</td>
+                      <td>0722-12306</td>
+                      <td>0722-12306</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data
+                      </td>
+                      <td>contains</td>
+                      <td>saveMoney</td>
+                      <td>{&#39;consumeTimes&#39;: &#39;42&#39;, &#39;allPaySum&#39;: &#39;7081.23&#39;, &#39;saveMoney&#39;: &#39;159.77&#39;, &#39;orderList&#39;: [{&#39;orderId&#39;: &#39;1012211301824120008&#39;, &#39;stationName&#39;: &#39;老王P端测试（油站标签）专用~切记勿动数据&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:24:12&#39;, &#39;orderSum&#39;: &#39;193.05&#39;, &#39;reduceSum&#39;: &#39;11.12&#39;, &#39;orderState&#39;: 1, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301822490001&#39;, &#39;stationName&#39;: &#39;老王P端测试（油站标签）专用~切记勿动数据&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:22:50&#39;, &#39;orderSum&#39;: &#39;193.05&#39;, &#39;reduceSum&#39;: &#39;11.12&#39;, &#39;orderState&#39;: 1, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301821210005&#39;, &#39;stationName&#39;: &#39;老王P端测试（油站标签）专用~切记勿动数据&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:21:22&#39;, &#39;orderSum&#39;: &#39;193.05&#39;, &#39;reduceSum&#39;: &#39;11.12&#39;, &#39;orderState&#39;: 1, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}, {&#39;orderId&#39;: &#39;1012211301644170002&#39;, &#39;stationName&#39;: &#39;老王P端测试（油站标签）专用~切记勿动数据&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/98364def-49f3-4f53-abf4-3492874a95c4-1669084297655.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 16:44:17&#39;, &#39;orderSum&#39;: &#39;104.17&#39;, &#39;reduceSum&#39;: &#39;100.00&#39;, &#39;orderState&#39;: 1, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}], &#39;orderQuantity&#39;: 4, &#39;currentPageNum&#39;: 1, &#39;allPageNum&#39;: 4, &#39;personalInfo&#39;: {&#39;joinEjiayouDay&#39;: &#39;8&#39;, &#39;headUrl&#39;: None, &#39;nickName&#39;: &#39;易加油566&#39;, &#39;centerPicUrl&#39;: None, &#39;globalPicUrl&#39;: None}}</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>1744</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>245.54</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>244.533</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_2_5">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">订单退款操作</td>
+      <td style="text-align:center;width:6em;">443.34 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_2_5_1">log-1</a>
+        <div id="popup_log_2_5_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_2_5_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 订单退款操作</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/refund/6.5.6/Rbxac/18679256505/1012211301824120008/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/refund/6.5.6/Rbxac/18679256505/1012211301824120008/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:13 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;orderId&#34;: 1012211301824120008,
+    &#34;refundTime&#34;: &#34;2022-11-30 18:24:13&#34;,
+    &#34;status&#34;: &#34;2&#34;,
+    &#34;msg&#34;: null,
+    &#34;userPhon&#34;: &#34;18679256505&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data.status
+                      </td>
+                      <td>string_equals</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>193</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>443.34</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>443.035</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+  
+  <h3>用例:使用优惠券并参与xy活动下单成功</h3>
+  <table id="suite_3" class="details">
+    <tr>
+      <td>总数: 5</td>
+      <td>成功: 5</td>
+      <td>失败: 0</td>
+      <td>错误: 0</td>
+      <td>跳过: 0</td>
+    </tr>
+    <tr>
+      <th>状态</th>
+      <th colspan="2">步骤</th>
+      <th>响应时长</th>
+      <th>详情</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_3_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">使用优惠券并参与油站和平台活动订单计算</td>
+      <td style="text-align:center;width:6em;">550.18 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_3_1_1">log-1</a>
+        <div id="popup_log_3_1_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_3_1_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 使用优惠券并参与油站和平台活动订单计算</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/compute/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;134&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;identityCode&#34;: 6,
+  &#34;oilgunCode&#34;: 1,
+  &#34;phoneNumber&#34;: &#34;18679256505&#34;,
+  &#34;stationId&#34;: &#34;38311&#34;,
+  &#34;totalAmount&#34;: 200,
+  &#34;userCouponId&#34;: &#34;110502&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/compute/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:13 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;oilMass&#34;: &#34;27.7778&#34;,
+    &#34;payAmount&#34;: &#34;183.61&#34;,
+    &#34;serviceFee&#34;: &#34;0&#34;,
+    &#34;discountAmount&#34;: &#34;16.39&#34;,
+    &#34;couponAmount&#34;: &#34;0&#34;,
+    &#34;discountPrice&#34;: &#34;6.6100&#34;,
+    &#34;countryPrice&#34;: &#34;9.0000&#34;,
+    &#34;stationPrice&#34;: &#34;7.2000&#34;,
+    &#34;payUnitPrice&#34;: &#34;6.6100&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>278</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>550.18</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>549.474</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_3_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">创建使用优惠券并参与油站和平台活动油站订单</td>
+      <td style="text-align:center;width:6em;">667.19 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_3_2_1">log-1</a>
+        <div id="popup_log_3_2_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_3_2_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 创建使用优惠券并参与油站和平台活动油站订单</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;244&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;hadInvoice&#34;: true,
+  &#34;identityCode&#34;: null,
+  &#34;invoiceHead&#34;: null,
+  &#34;invoiceNumber&#34;: null,
+  &#34;oilgunCode&#34;: 1,
+  &#34;outOrderSign&#34;: null,
+  &#34;phoneNumber&#34;: &#34;18679256505&#34;,
+  &#34;plateNumber&#34;: null,
+  &#34;stationId&#34;: &#34;38311&#34;,
+  &#34;totalAmount&#34;: 200,
+  &#34;userCouponId&#34;: &#34;110502&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/build/6.5.6/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:14 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;orderSign&#34;: &#34;1012211301824140006&#34;,
+    &#34;oilMass&#34;: &#34;27.7778&#34;,
+    &#34;payAmount&#34;: &#34;193.05&#34;,
+    &#34;discountPrice&#34;: &#34;6.95&#34;,
+    &#34;couponAmount&#34;: &#34;0&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>196</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>667.19</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>666.634</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_3_3">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">用户支付使用优惠券并参与油站和平台活动订单</td>
+      <td style="text-align:center;width:6em;">366.76 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_3_3_1">log-1</a>
+        <div id="popup_log_3_3_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_3_3_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 用户支付使用优惠券并参与油站和平台活动订单</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/pay/6.5.6/1012211301824140006/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;83&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;orderSign&#34;: &#34;1012211301824140006&#34;,
+  &#34;outOrderSign&#34;: 1111,
+  &#34;totalAmount&#34;: &#34;193.05&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/pay/6.5.6/1012211301824140006/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:15 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: null,
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        text
+                      </td>
+                      <td>contains</td>
+                      <td>totalCount</td>
+                      <td>{&#39;code&#39;: 200, &#39;message&#39;: &#39;操作成功&#39;, &#39;data&#39;: None, &#39;totalCount&#39;: None, &#39;success&#39;: True}</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>82</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>366.76</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>366.169</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_3_4">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">查询历史订单</td>
+      <td style="text-align:center;width:6em;">163.92 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_3_4_1">log-1</a>
+        <div id="popup_log_3_4_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_3_4_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 查询历史订单</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/statement/6.5.6/18679256505/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;,
+  &#34;userPhone&#34;: &#34;18679256505&#34;,
+  &#34;Content-Length&#34;: &#34;34&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;page&#34;: 1,
+  &#34;stationIds&#34;: &#34;38311&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/statement/6.5.6/18679256505/Rbxac/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:15 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;consumeTimes&#34;: &#34;43&#34;,
+    &#34;allPaySum&#34;: &#34;7274.28&#34;,
+    &#34;saveMoney&#34;: &#34;166.72&#34;,
+    &#34;orderList&#34;: [
+      {
+        &#34;orderId&#34;: &#34;1012211301824140006&#34;,
+        &#34;stationName&#34;: &#34;老王P端测试xy活动专用~切记勿动数据&#34;,
+        &#34;stationPic&#34;: &#34;https://img.ejiayou.com/upload/2022/11/7986d130-8a19-420e-b754-e6f25b4b2b49-1669193690084.png&#34;,
+        &#34;payTime&#34;: &#34;2022-11-30 18:24:14&#34;,
+        &#34;orderSum&#34;: &#34;193.05&#34;,
+        &#34;reduceSum&#34;: &#34;11.12&#34;,
+        &#34;orderState&#34;: 1,
+        &#34;hasStationPhone&#34;: 1,
+        &#34;stationPhone&#34;: &#34;0722-12306&#34;
+      }
+    ],
+    &#34;orderQuantity&#34;: 1,
+    &#34;currentPageNum&#34;: 1,
+    &#34;allPageNum&#34;: 1,
+    &#34;personalInfo&#34;: {
+      &#34;joinEjiayouDay&#34;: &#34;8&#34;,
+      &#34;headUrl&#34;: null,
+      &#34;nickName&#34;: &#34;易加油566&#34;,
+      &#34;centerPicUrl&#34;: null,
+      &#34;globalPicUrl&#34;: null
+    }
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data.orderList.0.stationPhone
+                      </td>
+                      <td>string_equals</td>
+                      <td>0722-12306</td>
+                      <td>0722-12306</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data
+                      </td>
+                      <td>contains</td>
+                      <td>saveMoney</td>
+                      <td>{&#39;consumeTimes&#39;: &#39;43&#39;, &#39;allPaySum&#39;: &#39;7274.28&#39;, &#39;saveMoney&#39;: &#39;166.72&#39;, &#39;orderList&#39;: [{&#39;orderId&#39;: &#39;1012211301824140006&#39;, &#39;stationName&#39;: &#39;老王P端测试xy活动专用~切记勿动数据&#39;, &#39;stationPic&#39;: &#39;https://img.ejiayou.com/upload/2022/11/7986d130-8a19-420e-b754-e6f25b4b2b49-1669193690084.png&#39;, &#39;payTime&#39;: &#39;2022-11-30 18:24:14&#39;, &#39;orderSum&#39;: &#39;193.05&#39;, &#39;reduceSum&#39;: &#39;11.12&#39;, &#39;orderState&#39;: 1, &#39;hasStationPhone&#39;: 1, &#39;stationPhone&#39;: &#39;0722-12306&#39;}], &#39;orderQuantity&#39;: 1, &#39;currentPageNum&#39;: 1, &#39;allPageNum&#39;: 1, &#39;personalInfo&#39;: {&#39;joinEjiayouDay&#39;: &#39;8&#39;, &#39;headUrl&#39;: None, &#39;nickName&#39;: &#39;易加油566&#39;, &#39;centerPicUrl&#39;: None, &#39;globalPicUrl&#39;: None}}</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>671</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>163.92</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>163.152</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_3_5">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">订单退款操作</td>
+      <td style="text-align:center;width:6em;">344.86 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_3_5_1">log-1</a>
+        <div id="popup_log_3_5_1" class="overlay">
+          <div class="popup">
+            <h2>请求和响应数据</h2>
+            <a class="close" href="#record_3_5_1">&times;</a>
+
+            <div class="content">
+              <h3>步骤: 订单退款操作</h3>
+
+              
+
+              
+
+              <h3>请求数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/refund/6.5.6/Rbxac/18679256505/1012211301824140006/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.28.1&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;clientType&#34;: &#34;5&#34;,
+  &#34;productType&#34;: &#34;79&#34;,
+  &#34;socialType&#34;: &#34;4&#34;,
+  &#34;sourceType&#34;: &#34;2&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>响应数据:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://dev.ejiayou.com/gateway/ensd-service/openApi/order/refund/6.5.6/Rbxac/18679256505/1012211301824140006/B8610DD088663E8548FA3F37E43D3A72/1669803843
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;openresty/1.15.8.2&#34;,
+  &#34;Date&#34;: &#34;Wed, 30 Nov 2022 10:24:15 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Vary&#34;: &#34;Origin, Access-Control-Request-Method, Access-Control-Request-Headers&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;*&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;message&#34;: &#34;操作成功&#34;,
+  &#34;data&#34;: {
+    &#34;orderId&#34;: 1012211301824140006,
+    &#34;refundTime&#34;: &#34;2022-11-30 18:24:15&#34;,
+    &#34;status&#34;: &#34;2&#34;,
+    &#34;msg&#34;: null,
+    &#34;userPhon&#34;: &#34;18679256505&#34;
+  },
+  &#34;totalCount&#34;: null,
+  &#34;success&#34;: true
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>校验数据:</h3>
+              <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>equals</td>
+                      <td>操作成功</td>
+                      <td>操作成功</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.success
+                      </td>
+                      <td>equals</td>
+                      <td>True</td>
+                      <td>True</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.data.status
+                      </td>
+                      <td>string_equals</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>统计字段:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>193</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>344.86</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>344.24</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>
