@@ -16,7 +16,7 @@
       identityCode: 6  #唯一标识
       oilgunCode: $oilgunCode
       phoneNumber: $phoneNumber
-      stationId: $stationIds
+      stationId: $stationId
       totalAmount: $totalAmount
       userCouponId: $userCouponId
       clientType: "5"
@@ -40,3 +40,4 @@
       - eq: [ json.success, True ]
       - str_eq: [ json.data.discountAmount, $result3 ]
       - str_eq: [ json.data.payAmount, $payAmount ]
+      - str_eq: [ json.data.serviceFee, $serviceFee ]

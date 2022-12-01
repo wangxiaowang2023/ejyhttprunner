@@ -6,7 +6,7 @@
       timestamp: ${forEach(1)}
 
 - test:
-    name: 查看油站详情信息
+    name: $case
     api: api/P端接口/API对接主要接口/油站详情接口.yml
     variables:
       version: 6.5.6
@@ -32,8 +32,8 @@
       - eq: [ "status_code", 200 ]
       - eq: [ json.message, "操作成功" ]
       - eq: [ json.success, True ]
-      - str_eq: [ json.data.prices.0.discountPrice, "7.15" ]
-      - str_eq: [ json.data.prices.1.discountPrice, "7.40" ]
-      - str_eq: [ json.data.prices.2.discountPrice, "7.90" ]
-      - str_eq: [ json.data.prices.3.discountPrice, "8.10" ]
+      - str_eq: [ json.data.prices.0.discountPrice, $expect1 ]
+      - str_eq: [ json.data.prices.1.discountPrice, $expect2 ]
+      - str_eq: [ json.data.prices.2.discountPrice, $expect3 ]
+      - str_eq: [ json.data.prices.3.discountPrice, $expect4 ]
 

@@ -29,7 +29,7 @@
       plateNumber:   #车牌号码
       stationId: $stationId
       totalAmount: $totalAmount
-      userCouponIdSql: SELECT id from ejy_ucs.member_coupon where  member_id = 103970288 AND state=1 ORDER BY id desc LIMIT 1;
+      userCouponIdSql: SELECT id from ejy_ucs.member_coupon where  member_id = 103970288 AND state=1 AND status=1 ORDER BY id desc LIMIT 1;
       userCouponId: ${selectSqlOneData($userCouponIdSql,id)}
       clientType: "5"
       productType: "79" #平台标识
@@ -71,7 +71,7 @@
       plateNumber:   #车牌号码
       stationId: $stationId
       totalAmount: $totalAmount
-      userCouponIdSql: SELECT id from ejy_ucs.member_coupon where  member_id = 103970288 AND state=1 ORDER BY id desc LIMIT 1;
+      userCouponIdSql: SELECT id from ejy_ucs.member_coupon where  member_id = 103970288 AND state=1 AND status=1 ORDER BY id desc LIMIT 1;
       userCouponId: ${selectSqlOneData($userCouponIdSql,id)}
       clientType: "5"
       productType: "79" #平台标识
