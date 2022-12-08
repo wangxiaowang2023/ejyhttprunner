@@ -96,7 +96,6 @@
     api: api/P端接口/API对接主要接口/订单支付接口.yml
     variables:
       version: 6.5.6
-      orderSign: $orderSign    #订单标识---订单号
       platformName: $platformName
       sign: $sign
       timestamp: $timestamp

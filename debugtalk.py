@@ -244,17 +244,16 @@ def forEach(key):
             return value[1]
 
 
+def addCount(num):
+    return num + 1
 
 
 if __name__ == '__main__':
-    # print(strSwapUrl('http://www.baidu.com'))
-    # print(urlSwapStr('http%3A%2F%2Fwww.baidu.com'))
     # print(gettime_delta3())
-    # para = {"adPositionId": "", "cityId": "", "platformId": 1, "stationId": "", "userLabelId": ""}
-    # print(dict_swapper_list(para))
     # print(forEach(0))
     # print(forEach(1))
     import random
+
     num = random.randint(0, 4)
     person = ["高老师", "铭奇", "国旺", "佳辉", "石根"]
     print("%s主持周四分享", person[num])

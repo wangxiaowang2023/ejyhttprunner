@@ -47,8 +47,8 @@
       - eq: [ json.message, "操作成功" ]
       - eq: [ json.code, 200 ]
       - eq: [ json.success, True ]
-#      - str_eq: [ json.data.discountAmount, "1.39" ]
-#      - str_eq: [ json.data.payAmount, "198.61" ]
+#      - str_eq: [ json.data.discountAmount, "4.17" ]
+#      - str_eq: [ json.data.payAmount, "107.04" ]
 
 - test:
     name: 创建使用优惠券并参与xy活动油站订单
@@ -100,7 +100,6 @@
     api: api/P端接口/API对接主要接口/订单支付接口.yml
     variables:
       version: 6.5.6
-      orderSign: $orderSign    #订单标识---订单号
       platformName: $platformName
       sign: $sign
       timestamp: $timestamp

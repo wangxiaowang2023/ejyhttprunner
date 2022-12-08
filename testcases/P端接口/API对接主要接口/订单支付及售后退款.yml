@@ -93,12 +93,42 @@
       - eq: [ json.data.payAmount, "198.61" ]
       - eq: [ json.data.discountPrice, "7.15" ]
 
+#- test:
+#    name: 用户支付金额与应付金额不一致，支付失败
+#    api: api/P端接口/API对接主要接口/订单支付接口.yml
+#    variables:
+#      version: 6.5.6
+#      platformName: $platformName
+#      sign: $sign
+#      timestamp: $timestamp
+#      outOrderSign: 1112
+#      payAmount: 200
+#      clientType: "5"
+#      productType: "79" #平台标识
+#      socialType: "4"
+#      sourceType: "2"   #渠道
+#      Authorization:
+#      cityName:
+#      latitude:
+#      longitude:
+#      machineNo:
+#      noAuth:
+#      osType:
+#      plat:
+#      userPhone: $userPhone
+#      versionBuild:
+#    validate:
+#      - eq: [ "status_code", 200 ]
+#      - eq: [ json.message, "操作成功" ]
+#      - eq: [ json.code, 200 ]
+#      - eq: [ json.success, True ]
+#      - contains: ["text", 'totalCount']
+
 - test:
     name: 用户支付订单
     api: api/P端接口/API对接主要接口/订单支付接口.yml
     variables:
       version: 6.5.6
-      orderSign: $orderSign    #订单标识---订单号
       platformName: $platformName
       sign: $sign
       timestamp: $timestamp

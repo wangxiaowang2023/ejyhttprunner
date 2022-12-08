@@ -7,9 +7,8 @@ variables:
   sign: $sign
   timestamp: $timestamp
   orderPayVO:
-    orderSign: $orderSign
     outOrderSign: $outOrderSign
-    totalAmount: $payAmount
+    payAmount: $payAmount
 
 request:
   url: /gateway/ensd-service/openApi/order/pay/$version/$orderSign/$platformName/$sign/$timestamp
