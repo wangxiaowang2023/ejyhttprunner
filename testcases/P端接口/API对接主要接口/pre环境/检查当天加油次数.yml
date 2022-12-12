@@ -1,5 +1,5 @@
 - config:
-    name: 订单支付及售后退款
+    name: 检查当天加油次数
     base_url: ${ENV(PPORTURL)}
     variables:
       totalAmount: 200
@@ -7,26 +7,22 @@
       userPhone: "18679256505"
       sign: ${forEach(0)}
       timestamp: ${forEach(1)}
-      platformName: Rbxac
+      platformName: Y6050
     output:
+      - orderCount
       - orderSign
-      - orderId
       - payAmount
 
 - test:
-    name: 订单计算
-    api: api/P端接口/API对接主要接口/订单计算接口.yml
+    name: 查询xy活动staionId=100000267油站详情用户当天加油次数
+    api: api/P端接口/API对接主要接口/油站详情接口.yml
     variables:
       version: 6.5.6
-      platformName: $platformName
+      platformName: Rbxac
+      stationId: $stationId
       sign: $sign
       timestamp: $timestamp
-      identityCode: 6  #唯一标识
-      oilgunCode: 1
-      phoneNumber: $userPhone
-      stationId: $stationId
-      totalAmount: $totalAmount
-      userCouponId:
+      userPhone: 18679256505
       clientType: "5"
       productType: "79" #平台标识
       socialType: "4"
@@ -39,18 +35,16 @@
       noAuth:
       osType:
       plat:
-      userPhone: $userPhone
       versionBuild:
+    extract:
+      orderCount: json.data.orderCount
     validate:
       - eq: [ "status_code", 200 ]
       - eq: [ json.message, "操作成功" ]
-      - eq: [ json.code, 200 ]
       - eq: [ json.success, True ]
-      - str_eq: [ json.data.discountAmount, "1.39" ]
-      - str_eq: [ json.data.payAmount, "198.61" ]
 
 - test:
-    name: 创建油站订单
+    name: 创建使用优惠券并参与xy活动油站订单
     api: api/P端接口/API对接主要接口/创建订单接口.yml
     variables:
       version: 6.5.6
@@ -67,7 +61,8 @@
       plateNumber:   #车牌号码
       stationId: $stationId
       totalAmount: $totalAmount
-      userCouponId:
+      userCouponIdSql: SELECT id from ejy_ucs.member_coupon where  member_id = 103704047 AND state=1 AND status=1 ORDER BY id desc LIMIT 1;
+      userCouponId: ${selectSqlOneData($userCouponIdSql,id)}
       clientType: "5"
       productType: "79" #平台标识
       socialType: "4"
@@ -90,42 +85,9 @@
       - eq: [ json.message, "操作成功" ]
       - eq: [ json.code, 200 ]
       - eq: [ json.success, True ]
-      - eq: [ json.data.payAmount, "198.61" ]
-      - eq: [ json.data.discountPrice, "7.15" ]
-
-#- test:
-#    name: 用户支付金额与应付金额不一致，支付失败
-#    api: api/P端接口/API对接主要接口/订单支付接口.yml
-#    variables:
-#      version: 6.5.6
-#      platformName: $platformName
-#      sign: $sign
-#      timestamp: $timestamp
-#      outOrderSign: 1112
-#      payAmount: 200
-#      clientType: "5"
-#      productType: "79" #平台标识
-#      socialType: "4"
-#      sourceType: "2"   #渠道
-#      Authorization:
-#      cityName:
-#      latitude:
-#      longitude:
-#      machineNo:
-#      noAuth:
-#      osType:
-#      plat:
-#      userPhone: $userPhone
-#      versionBuild:
-#    validate:
-#      - eq: [ "status_code", 200 ]
-#      - eq: [ json.message, "操作成功" ]
-#      - eq: [ json.code, 200 ]
-#      - eq: [ json.success, True ]
-#      - contains: ["text", 'totalCount']
 
 - test:
-    name: 用户支付订单
+    name: 用户支付使用优惠券并参与xy活动订单
     api: api/P端接口/API对接主要接口/订单支付接口.yml
     variables:
       version: 6.5.6
@@ -153,19 +115,18 @@
       - eq: [ json.message, "操作成功" ]
       - eq: [ json.code, 200 ]
       - eq: [ json.success, True ]
-      - contains: ["text", 'totalCount']
+      - contains: [ "text", 'totalCount' ]
 
 - test:
-    name: 查询历史订单
-    api: api/P端接口/API对接主要接口/历史订单查询接口.yml
+    name: 支付成功后查询油站详情用户当天加油次数+1
+    api: api/P端接口/API对接主要接口/油站详情接口.yml
     variables:
       version: 6.5.6
-      platformName: $platformName
-      userPhone: $userPhone
+      platformName: Rbxac
+      stationId: $stationId
       sign: $sign
       timestamp: $timestamp
-      page: 1
-      stationIds: $stationId
+      userPhone: 18679256505
       clientType: "5"
       productType: "79" #平台标识
       socialType: "4"
@@ -179,16 +140,12 @@
       osType:
       plat:
       versionBuild:
-    extract:
-      orderId: json.data.orderList.0.orderId
+      newOrderCount: ${addCount($orderCount)}
     validate:
       - eq: [ "status_code", 200 ]
-      - eq: [ json.code, 200 ]
       - eq: [ json.message, "操作成功" ]
       - eq: [ json.success, True ]
-      - str_eq: [ json.data.orderList.0.stationPhone, "0722-12306" ]
-      - contains: [ json.data, "allPaySum" ]
-      - contains: [ json.data, "saveMoney" ]
+      - eq: [ json.data.orderCount, $newOrderCount ]
 
 - test:
     name: 订单退款操作
@@ -197,7 +154,7 @@
       version: 6.5.6
       platformName: $platformName
       userPhone: $userPhone
-      orderId: $orderId
+      orderId: $orderSign
       sign: $sign
       timestamp: $timestamp
       clientType: "5"
@@ -219,3 +176,32 @@
       - eq: [ json.message, "操作成功" ]
       - eq: [ json.success, True ]
       - str_eq: [ json.data.status, 2 ]
+
+- test:
+    name: 退款后查询油站详情用户当天加油次数-1
+    api: api/P端接口/API对接主要接口/油站详情接口.yml
+    variables:
+      version: 6.5.6
+      platformName: Rbxac
+      stationId: $stationId
+      sign: $sign
+      timestamp: $timestamp
+      userPhone: 18679256505
+      clientType: "5"
+      productType: "79" #平台标识
+      socialType: "4"
+      sourceType: "2"   #渠道
+      Authorization:
+      cityName:
+      latitude:
+      longitude:
+      machineNo:
+      noAuth:
+      osType:
+      plat:
+      versionBuild:
+    validate:
+      - eq: [ "status_code", 200 ]
+      - eq: [ json.message, "操作成功" ]
+      - eq: [ json.success, True ]
+      - eq: [ json.data.orderCount, $orderCount ]
