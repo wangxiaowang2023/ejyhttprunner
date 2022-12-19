@@ -6,10 +6,6 @@ variables:
   userPhone: $userPhone
   sign: $sign
   timestamp: $timestamp
-  merchandiseVo:
-    oilgunCode: $oilgunCode
-    stationId: $stationId
-    totalAmount: $totalAmount
 
 request:
   url: /gateway/ensd-service/openApi/merchandise/query/$version/$userPhone/$platformName/$sign/$timestamp
@@ -28,6 +24,5 @@ request:
     osType:
     plat:
     versionBuild:
-  params: $merchandiseVo
 validate:
   - eq: [ "status_code", 200 ]

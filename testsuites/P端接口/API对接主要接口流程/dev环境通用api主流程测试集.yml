@@ -102,3 +102,8 @@ testcases:
     testcase: testcases/P端接口/API对接主要接口/dev环境/检查当天加油次数.yml
     variables:
       stationId: "38311"   #老王P端测试xy活动专用~切记勿动数据
+
+  用例:油站配置需要小票机，小票机不在线下单失败:
+    testcase: testcases/P端接口/API对接主要接口/dev环境/油站配置需要小票机，小票机不在线下单失败.yml
+    variables:
+      stationId: "38466"   #老王测试小票机离线~切记勿动数据
