@@ -1,5 +1,6 @@
 import os
 import time
+import datetime
 from decimal import Decimal
 from urllib import parse
 import requests
@@ -247,13 +248,21 @@ def forEach(key):
 def addCount(num):
     return num + 1
 
+def getEndTime():
+    # 按照%Y%m%d%H%M%S格式获取时间
+    nowTime = time.localtime()
+    strFormatTime = time.strftime("%Y%m%d%H%M%S", nowTime)
+    return strFormatTime
+
+def getStartTime(intDayNum):
+    # 获取前几天时间，按照%Y%m%d%H%M%S格式获取时间
+    now_time = datetime.datetime.now()
+    return (now_time + datetime.timedelta(days=intDayNum)).strftime("%Y%m%d%H%M%S")
+
 
 if __name__ == '__main__':
-    # print(gettime_delta3())
-    # print(forEach(0))
-    # print(forEach(1))
-    import random
-
-    num = random.randint(0, 4)
-    person = ["高老师", "铭奇", "国旺", "佳辉", "石根"]
-    print("%s主持周四分享", person[num])
+    # import random
+    # num = random.randint(0, 4)
+    # person = ["高老师", "铭奇", "国旺", "佳辉", "石根"]
+    # print("%s主持周四分享", person[num])
+    print(getStartTime())

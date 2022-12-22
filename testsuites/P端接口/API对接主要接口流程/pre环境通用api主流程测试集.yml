@@ -83,6 +83,11 @@ testcases:
     variables:
       stationId: "100000266"   #老王P端测试专用~不可动勿动
 
+  用例:取消待支付订单:
+    testcase: testcases/P端接口/API对接主要接口/pre环境/取消待支付订单.yml
+    variables:
+      stationId: "100000266"   #老王P端测试专用~不可动勿动
+
   用例:待支付订单再次下单，需要取消优惠券和订单:
     testcase: testcases/P端接口/API对接主要接口/pre环境/待支付订单再次下单，需要取消优惠券和订单.yml
     variables:
@@ -107,4 +112,13 @@ testcases:
     testcase: testcases/P端接口/API对接主要接口/pre环境/油站配置需要小票机，小票机不在线下单失败.yml
     variables:
       stationId: "100000273"   #老王测试小票机离线~切记勿动数据
+
+  用例:$name6:
+    testcase: testcases/P端接口/API对接主要接口/dev环境/财务对账单.yml
+    parameters:
+      name6-pageNum-pageSize-orderId-outOrderSign:
+        - [ 查询第1页按照10页分页财务对账数据,1,10,'','' ]
+        - [ 查询第2页按照10页分页财务对账数据,2,10,'','' ]
+        - [ 不传分页条件查询财务对账数据,'','','','' ]
+        - [ 通过第三方订单号查询财务对账数据,'','','','1111' ]
 
