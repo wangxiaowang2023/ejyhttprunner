@@ -7,7 +7,7 @@
       userPhone: "18679256505"
       sign: ${forEach(0)}
       timestamp: ${forEach(1)}
-      platformName: Rbxac
+      platformName: Y6050
     output:
       - orderSign
       - payAmount

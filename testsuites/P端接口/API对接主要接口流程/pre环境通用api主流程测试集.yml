@@ -114,7 +114,7 @@ testcases:
       stationId: "100000273"   #老王测试小票机离线~切记勿动数据
 
   用例:$name6:
-    testcase: testcases/P端接口/API对接主要接口/dev环境/财务对账单.yml
+    testcase: testcases/P端接口/API对接主要接口/pre环境/财务对账单.yml
     parameters:
       name6-pageNum-pageSize-orderId-outOrderSign:
         - [ 查询第1页按照10页分页财务对账数据,1,10,'','' ]
