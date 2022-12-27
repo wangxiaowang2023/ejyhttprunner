@@ -1,26 +1,20 @@
 - config:
-    name: 财务对账单
+    name: 获取油站标签数据
     base_url: ${ENV(PPORTURL)}
     variables:
       sign: ${forEach(0)}
       timestamp: ${forEach(1)}
-      platformName: Rbxac
-
+      platformName: Y6050
 
 - test:
-    name: $name6
-    api: api/P端接口/API对接主要接口/财务对账单接口.yml
+    name: 获取油站标签数据
+    api: api/P端接口/API对接主要接口/获取油站标签接口.yml
     variables:
-      endTime: ${getEndTime()}
-      pageNum:
-      pageSize:
-      startTime: ${getStartTime(-30)}
-      orderId:
-      outOrderSign:
       version: 6.5.6
       platformName: $platformName
       sign: $sign
       timestamp: $timestamp
+      stationIds: "100000266,100000263,100000267"
       clientType: "5"
       productType: "79" #平台标识
       socialType: "4"

@@ -7,15 +7,15 @@
       platformName: Y6050
 
 - test:
-    name: 财务对账单
+    name: $name6
     api: api/P端接口/API对接主要接口/财务对账单接口.yml
     variables:
       endTime: ${getEndTime()}
       pageNum:
       pageSize:
-      startTime: ${getStartTime(-30)}
-      orderId:
-      outOrderSign:
+      startTime: ${getStartTime(-90)}
+      orderId: $orderId
+      outOrderSign: $outOrderSign
       version: 6.5.6
       platformName: $platformName
       sign: $sign
