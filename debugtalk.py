@@ -230,6 +230,8 @@ def getSign_api():
     :return:
     '''
     ret = requests.get("https://dev.ejiayou.com/sign/api/cji49oEtvjoGbRyU/x4Ow2IX1C4zzHcjE")
+    # ret = requests.get("https://dev.ejiayou.com/sign/api/OBRp0pcxVtguOaxg/Jp2KDfaWZL2VJ0kU")
+    # ret = requests.get("https://dev.ejiayou.com/sign/order/OBRp0pcxVtguOaxg/Jp2KDfaWZL2VJ0kU")
     signList = ret.text.split('/')
     return signList
 
